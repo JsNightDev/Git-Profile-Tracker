@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <style>
+        .profile_card {
+            display: block;
+        }
+
+        .profile_card_none {
+            display: none
+        }
+
+        .alert {
+            border: 3px solid rgb(255, 0, 0)
+        }
+
+        .repo_card {
+            display: flex;
+            padding: 15px;
+        }
+
+        .child {
+            border-radius: 25px;
+            padding: 25px;
+            width: 300px;
+            height: 150px;
+            background-color: rgb(36, 18, 74);
+            justify-content: space-between;
+        }
+
+        .name {
+            color: rgb(255, 255, 255);
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .desc {
+            color: rgb(255, 255, 255);
+            font-size: 12px;
+            font-weight: 100;
+        }
+
+        .see {
+            color: rgb(255, 255, 255);
+            border: solid black 1px;
+        }
+
+        .lang {
+            background-color: rgb(254, 186, 27);
+            color: rgb(255, 255, 255);
+            font-size: 12px;
+            font-weight: 900;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: 28px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 3px;
+            padding-right: 3px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        .the_Gif {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main {
+            background-color: rgb(4, 14, 28);
+        }
+
+        #profile {
+            background-color: rgb(36, 18, 74, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        #repo_parent {
+            /* background-color: rgba(34, 34, 34, 0.5); */
+            display: flex;
+            background-color: rgb(4, 14, 28, 0.5);
+            backdrop-filter: blur(10px);
+
+        }
+
+        .repo_article_main {
+            background-color: rgb(4, 14, 28);
+            width: 100%;
+            height: 100%;
+        }
+
+        .show_warning_use {
+            display: block;
+            font-size: 12px;
+            color: red;
+        }
+    </style>
+
+    <section class="main h-screen w-full relative">
+        <header class="the_Gif fixed">
+            <!-- animation section -->
+            <div class="bg_1 relative">
+                <video loop muted autoplay="autoplay" class="absolute right-[0]" width="50%">
+                    <source src=" ./assests/globe-900.hevc.mp4">
+                </video>
+                <img class="absolute top-[420px] xl:top-[450px] right-[0] w-[418px]" src="./assests/astrocat.png"
+                    alt="">
+            </div>
+
+            <!-- search section -->
+            <div class="search container px-[25px] flex items-center justify-between gap-[10px] mx-auto rounded-full 
+                relative mt-[50px]">
+
+                <input id="input" onclick="pageReload()" class="outline-none  w-full h-[45px] relative 
+                text-base rounded-full px-16 py-2" type="search" id="input" placeholder="Enter A Git_User_name">
+
+
+                <div onclick="getdata()" class="">
+                    <a href="./profile.html"><img class="w-[60px] md:w-[55px] h-[50px] text-gray-600"
+                            src="./assests/Picsart_23-01-14_16-45-11-376.png" alt="login"></a>
+                </div>
+
+                <h6 id="warning" class="hidden show_warning absolute bottom-[-25px] left-[90px]">Enter A Valid UserId
+                </h6>
+            </div>
+
+        </header>
+
+        <!-- content section -->
+        <article class="mx-auto w-full pt-[150px]">
+
+            <!-- profile card -->
+            <div id="profile" style="" class="w-[80%] mx-auto h-full rounded-xl relative hidden">
+
+                <div class="flex items-center gap-[10px] justify-center lg:justify-between w-full container">
+
+                    <div class="py-[20px] lg:flex lg:items-center lg:gap-[19px] xl:gap-[50px] px-[20px]">
+                        <h3 id="userName" class="text-slate-200 pb-[5px]">@user_id</h3>
+
+                        <img id="profilePic"
+                            class="w-[100px] h-[100px] md:w-[200px] md:h-[150px] lg:w-[150px] lg::h-[150px] rounded-full"
+                            alt="profile pic">
+
+                        <div>
+                            <h1 id="name" class="mt-[5px] font-sans font-semibold lg:text-[15px] xl:text-[18px]
+                             md:text-2xl 
+                            text-slate-200 rounded-full w-fit cursor-default">
+                                Name
+                            </h1>
+
+                            <div>
+                                <h4 id="jobRole" class="w-fit text-slate-200  lg:text-[12px] md:text-[16px]">
+                                    Developer
+                                </h4>
+                            </div>
+
+                            <div class="flex gap-[5px] items-center pb-[10px]">
+                                <!-- <img class="w-[13px] h-[13px]" src="./assests/location.png" alt=""> -->
+                                <h3 id="location" class="text-slate-200 text-[12px] md:text-[14px]">Location</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class=" pr-[20px] md:flex md:items-center md:justify-center">
+
+                        <div class="gap-[10px] shadow-lg flex items-center justify-center 
+                                        px-[25px] py-[12px] rounded-lg">
+                            <img class="w-[18px] hidden md:block  h-[18px] " src="./assests/audience.png" alt="">
+                            <h6 id="followers" class="text-slate-200">0</h6>
+                        </div>
+
+                        <div class="gap-[10px] shadow-lg flex items-center justify-center 
+                             px-[25px] py-[12px] rounded-lg">
+                            <img class="w-[18px] hidden md:block  h-[18px] " src="./assests/user.png" alt="">
+                            <h6 id="following" class="text-slate-200">10</h6>
+                        </div>
+
+                        <div onclick="showrepo()" class="gap-[10px] cursor-pointer shadow-lg flex 
+                        items-center justify-center px-[25px] py-[12px] rounded-lg">
+                            <img class="w-[18px] hidden md:block  h-[18px] " src="./assests/git.png" alt="">
+                            <h6 id="repoCount" class="text-slate-200">0</h6>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Repo section -->
+            <div class="repo_article_main">
+                <div id="repo_parent" class="hidden flex-wrap gap-[10px] justify-center w-full 
+                rounded-xl mt-[15px]">
+                    <!-- <div class="bg-emerald-500 w-[250px] h-[350px] cursor-pointer"></div> -->
+                </div>
+            </div>
+
+        </article>
+    </section>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

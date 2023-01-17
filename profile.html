@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <style>
+        .profile_card {
+            display: block;
+        }
+
+        .repo_card {
+            display: flex;
+            padding: 15px;
+        }
+
+        .child {
+            border-radius: 25px;
+            padding: 25px;
+            width: 300px;
+            height: 150px;
+            /* bg-slate-500  */
+            background-color: rgb(249, 249, 249);
+        }
+
+        .child:hover {
+            background-color: rgb(16, 185, 129);
+            cursor: pointer;
+        }
+
+        .child:hover .desc {
+            color: white;
+
+        }
+
+        .child:hover .lang {
+            color: white;
+
+        }
+
+        .name {
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 500;
+        }
+
+        .desc {
+            color: rgb(11, 133, 93);
+            font-size: 14px;
+            font-weight: 100;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        .lang {
+            padding-top: 18px;
+            color: rgb(16, 185, 129);
+            font-weight: 900;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* .desc .lang:hover {
+            color: rgb(255, 255, 255);
+        } */
+
+        #profile {
+            background-color: rgb(249, 249, 249);
+
+        }
+    </style>
+
+    <article class="mx-auto w-full h-full bg-[]">
+
+        <!-- profile card -->
+        <div id="profile" style="display: block;"
+            class="w-[95%] h-[430px] mt-[15px] md:w-3/5 md:h-[450px] mx-auto rounded-xl relative">
+
+            <div class="pt-[20px]">
+
+                <img id="profilePic" class="p-3 mx-auto lg:w-[150px] lg:h-[150px]  rounded-full shadow-lg" alt="">
+                <!-- <img class="p-3 mx-auto w-[150px] h-[150px]  rounded-r-full shadow-lg"
+                                src="./assests/profile_pic.png" alt=""> -->
+                <h1 id="name" class="px-3  mt-[15px] shadow-lg font-sans font-semibold 
+                            text-2xl text-[black] rounded-full mx-auto bg-slate-500[13px] w-fit cursor-default">Name
+                </h1>
+                <h3 id="userName" class="text-center pt-[5px] pb-[5px]">@user_id</h3>
+                <div class="flex gap-[5px] items-center justify-center pb-[10px]">
+                    <img class="w-[13px] h-[13px]" src="./assests/location.png" alt="">
+                    <h3 id="location">Location</h3>
+                </div>
+
+                <div>
+                    <h4 id="jobRole" class="bg-emerald-500 cursor-pointer w-fit mx-auto text-slate-200  p-[10px]
+                     shadow-lg rounded-2xl">Developer
+                    </h4>
+                </div>
+
+            </div>
+
+            <div class="flex items-center justify-center pt-[10px]">
+                <div class="gap-[10px] shadow-lg flex items-center justify-center 
+                bg-[#10b981] mx-[10px] px-[25px] py-[12px] rounded-lg">
+                    <img class="w-[18px]  h-[18px] " src="./assests/audience.png" alt="">
+                    <h6 id="followers" class="text-slate-200">0</h6>
+                </div>
+                <div class="gap-[10px] shadow-lg flex items-center justify-center 
+                bg-[#10b981] mx-[10px] px-[25px] py-[12px] rounded-lg">
+                    <img class="w-[18px]  h-[18px] " src="./assests/user.png" alt="">
+                    <h6 id="following" class="text-slate-200">10</h6>
+                </div>
+                <div class="gap-[10px] cursor-pointer shadow-lg flex items-center justify-center 
+                bg-[#10b981] mx-[10px] px-[25px] py-[12px] rounded-lg">
+                    <img class="w-[18px]  h-[18px] " src="./assests/git.png" alt="">
+                    <h6 id="repoCount" class="text-slate-200">0</h6>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Repo section -->
+        <div id="repo_parent" class="flex-wrap gap-[10px] justify-center w-full 
+                rounded-xl mt-[15px]">
+            <!-- <div class="bg-emerald-500 w-[250px] h-[350px] cursor-pointer"></div> -->
+        </div>
+
+    </article>
+
+
+    <script src="./script_profile.js"></script>
+</body>
+
+</html>
